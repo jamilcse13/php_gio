@@ -8,33 +8,38 @@
 
 ## variable:
 - by value:
-    ```
-    $a = 1; $b = $a; $a = 5; 
-    echo $b       => 1
+    ```javascript
+    $a = 1; 
+    $b = $a; 
+    
+    $a = 5; 
+    echo $b;       // => 1
     ```
 - by reference:
-    ```
-    $a = 1; $b = &$a; $a = 5; 
-    echo $b       => 5
+    ```javascript
+    $a = 1; 
+    $b = &$a; 
+    $a = 5; 
+    echo $b;      // => 5
     ```
 
 - variable inside quotes:
-    ```
+    ```javascript
     $name = 'John'
-    echo 'Hello $name'        => Hello $name
-    echo "Hello $name"        => Hello John
-    echo "Hello {$name}"      => Hello John
-    echo "Hello " . $name     => Hello John
+    echo 'Hello $name';      //  => Hello $name
+    echo "Hello $name";      //  => Hello John
+    echo "Hello {$name}";    //  => Hello John
+    echo "Hello " . $name;   //  => Hello John
     ```
 
 - *variable variables*:
-    ```
+    ```javascript
     $foo = 'bar';
     // $$foo => $bar
     $$foo = 'baz';
 
-    echo $bar;       => baz
-    echo $$foo;      => baz
+    echo $bar;     //  => baz
+    echo $$foo;    //  => baz
     ```
 
 
@@ -42,27 +47,26 @@
     - use *define* function
     - define('name', 'value)
     - we can not change the value of the variable later
-    ```
-    define('STATUS_PAID', 'paid)
-    echo STATUS_PAID;       => paid
+    ```javascript
+    define('STATUS_PAID', 'paid);
+    echo STATUS_PAID;     //  => paid
     ```
     - check if a variable is defined
-    ```
-    echo defined('STATUS_PAID');         => 1
+    ```javascript
+    echo defined('STATUS_PAID');       //  => 1
     ```
 
     - use *const* keyword
-    ```
+    ```javascript
     const STATUS_PAID = 'paid';
-    echo STATUS_PAID;       => paid
+    echo STATUS_PAID;      //  => paid
     ```
 
     - define vs const:
-        - we use variable in a varible name using define, but can't using const
-        ```
+        - we use variable in a variable name using define, but can't use const
+        ```javascript
         $paid = 'PAID';
-        define('STATUS_' . $paid, 'paid')
-        echo STATUS_PAID;       => paid
+        define('STATUS_' . $paid, 'paid');
+        echo STATUS_PAID;      //   => paid
         ```
-
 
