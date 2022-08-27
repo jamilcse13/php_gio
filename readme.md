@@ -230,8 +230,8 @@ while($row = mysqli_fetch_assoc($result)) {
   echo $_SESSION['greeting'];
   ```
   
-### Files Operation:
-* **_File Open:_**
+## Files Operation:
+### File Open:
   ```javascript
   // fopen(filename, mode)
   $file = "example.txt";
@@ -240,7 +240,7 @@ while($row = mysqli_fetch_assoc($result)) {
   fclose($handle);
   ```
 
-* **_Write in a File:_**
+### Write in a File:
   ```javascript
   // fopen(filename, mode)
   $file = "example.txt";
@@ -253,7 +253,7 @@ while($row = mysqli_fetch_assoc($result)) {
   fclose($handle);
   ```
 
-* **_Read a File:_**
+### Read a File:
   * first we have given permission to the file
   ```javascript
   // fopen(filename, mode)
@@ -272,7 +272,7 @@ while($row = mysqli_fetch_assoc($result)) {
   fclose($handle);
   ```
 
-* **_Delete a File:_**
+### Delete a File:
   ```javascript
   $file = "example.txt";
   unlink($file);
