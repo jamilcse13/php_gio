@@ -229,3 +229,51 @@ while($row = mysqli_fetch_assoc($result)) {
   session_start();
   echo $_SESSION['greeting'];
   ```
+  
+### Files Operation:
+* **_File Open:_**
+  ```javascript
+  // fopen(filename, mode)
+  $file = "example.txt";
+  $handle = fopen($file, 'w');
+  // close the file
+  fclose($handle);
+  ```
+
+* **_Write in a File:_**
+  ```javascript
+  // fopen(filename, mode)
+  $file = "example.txt";
+  $handle = fopen($file, 'w');
+  
+  // write into the file
+  fwrite($handle, 'Software Engineer');
+  
+  // close the file
+  fclose($handle);
+  ```
+
+* **_Read a File:_**
+  * first we have given permission to the file
+  ```javascript
+  // fopen(filename, mode)
+  $file = "example.txt";
+  $handle = fopen($file, 'r');
+  
+  // read the whole file
+  $content = fread($handle, filesize($file));
+  echo $content;
+  
+  // specify character length
+  $content = fread($handle, 5);
+  echo $content;   // 5 chars are printed
+  
+  // close the file
+  fclose($handle);
+  ```
+
+* **_Delete a File:_**
+  ```javascript
+  $file = "example.txt";
+  unlink($file);
+  ```
