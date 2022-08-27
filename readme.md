@@ -186,3 +186,46 @@ while($row = mysqli_fetch_assoc($result)) {
     echo $row;
 }
 ```
+
+
+## Cookie and Session in PHP
+### Cookie:
+* use the global variable $_COOKIE
+  * This is an associative array
+* We can set the time limit till the cookie will stay
+* **_Set Cookie:_**
+  ```javascript
+  $name = "AnyName";
+  $value = 100;
+  // 1 week
+  $expiration = time() + (60*60*24*7);
+  
+  setcookie($name, $value, $expiration);
+  ```
+
+* **_Read the Cookie:_**
+  ```javascript
+  if (isset($_COOKIE["AnyName"]) {
+      // we will get 100 here
+      $data = $_COOKIE["AnyName"];
+      echo $data;
+  } else {
+      $data = "";
+  }
+  ```
+### Session:
+* use the global variable $_SESSION
+  * This is an associative array
+* When the browser close, the session data will also expire
+* Set and Read Session:
+  * first we need to run file1, it will set the data
+  * then if we run file2, it will show the session data
+  ```javascript
+  // file1
+  session_start();
+  $_SESSION['greeting'] = "Hello Viewers"
+  
+  // file2
+  session_start();
+  echo $_SESSION['greeting'];
+  ```
